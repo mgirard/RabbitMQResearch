@@ -7,7 +7,7 @@ connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
 
 #open queue and publish message
-channel.queue_declare(queue='hello')
+channel.queue_declare(queue='task_queue', durable=True)
 
 print ' [*] Waiting for messages. Exit with CTRL+C'
 
